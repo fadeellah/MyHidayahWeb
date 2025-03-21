@@ -1,0 +1,517 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    /*padding-top: 80px;*/
+    text-align: center;
+    /*background-image: url("assets/bg9.jpg");
+    background-size: contain; /* Pastikan gambar menutupi seluruh halaman
+    background-position: center;  Pusatkan gambar */
+}
+html {
+    scroll-behavior: smooth;
+}
+.alt {
+    background-image: linear-gradient(45deg, #9961CF,#6C3B94, #3A1359); /* Warna abu-abu terang untuk tampilan lebih profesional */
+    padding: 20px;
+    text-align: center;
+    max-width: 100%;
+}
+
+.logo img {
+    width: 15%; /* Perkecil ukuran logo */
+    height: auto; /* Pastikan aspek rasio tetap */
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeIn 1s ease-in-out forwards;
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* Responsif: Perkecil header di layar lebih kecil */
+@media (max-width: 768px) {
+    .header {
+        width: 50%; /* Lebarkan sedikit di layar tablet */
+        padding: 15px;
+    }
+    
+    .logo img {
+        width: 60px; /* Lebih kecil di layar kecil */
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        width: 70%; /* Lebih lebar untuk tampilan mobile */
+    }
+
+    .logo img {
+        width: 50px; /* Perkecil lagi di HP */
+    }
+}
+/* Style the navbar */
+#navbar {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex; /* Mengatur navbar dalam satu baris */
+    justify-content: center; /* Tengahkan item */
+    align-items: center;
+    padding: 10px 0;
+    z-index: 1000;
+  }
+  
+  /* Navbar links */
+  #navbar a {
+    color: #333;
+    text-align: center;
+    padding: 14px 30px; /* Jarak antar item */
+    text-decoration: none;
+    display: inline-block; /* Pastikan tetap sejajar */
+  }
+  /* Hover effect */
+#navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+  /* Page content */
+  .content {
+    padding: 16px;
+  }
+@media screen and (max-width: 768px) {
+    #navbar a {
+        font-size: 14px; /* Perkecil font */
+        padding: 10px 15px; /* Sesuaikan padding */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #navbar a {
+        font-size: 12px; /* Lebih kecil untuk layar kecil */
+        padding: 8px 12px;
+    }
+}
+  
+/* Kontainer Slideshow */
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Slide */
+.mySlides {
+  display: none;
+  position: relative;
+}
+
+/* Gambar dalam slideshow */
+.mySlides img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Posisi teks di dalam slide */
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  width: 80%;
+  max-width: 700px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Judul */
+.hero-text h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Paragraf */
+.hero-text p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Tombol */
+.hero-text button {
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1.2vw;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.hero-text button:hover {
+  background: #9961CF;
+}
+
+/* Navigasi prev & next */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2vw;
+  cursor: pointer;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+.prev:hover, .next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Titik indikator */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  cursor: pointer;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+    
+  }
+  /* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+  .hero-text {
+    width: 90%;
+    padding: 15px;
+  }
+  
+  .hero-text h3 {
+    font-size: 13px;
+  }
+
+  .hero-text p {
+    font-size: 10px;
+  }
+
+  .hero-text button {
+    font-size: 10px;
+    padding: 10px 15px;
+  }
+
+  .prev, .next {
+    font-size: 3vw;
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-text h3 {
+    font-size: 10px;
+  }
+
+  .hero-text p {
+    font-size: 8px;
+  }
+
+  .hero-text button {
+    font-size: 2vw;
+    padding: 5px 10px;
+  }
+
+  .prev, .next {
+    display: none;
+  }
+  .dot{
+    width: 5px;
+    height: 5px;
+  }
+}
+/* Container utama */
+.box-content {
+  margin: 25px;
+  border-bottom: 1px solid #333;
+  text-align: center;
+}
+
+/* Judul dengan garis bawah */
+.teks-judul {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  display: inline-block;
+  border-bottom: 4px solid #9961CF; /* Warna garis bawah */
+}
+
+/* Flexbox Container */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap; /* Agar responsif */
+  justify-content: center;
+  gap: 20px; /* Jarak antar item */
+  font-size: 30px;
+  text-align: center;
+  margin: 25px;
+  background-color: white;
+}
+
+/* Flex Item */
+.flex-item {
+  background-color: white;
+  padding: 10px;
+  flex: 1 1 300px; /* Basis 300px, bisa lebih kecil jika layar sempit */
+  max-width: 300px; /* Maksimum lebar setiap item */
+  transition: transform 0.3s ease;
+}
+
+/* Gambar Responsif */
+.flex-item img {
+  width: 100%;
+  height: auto;
+  max-width: 326px; /* Agar tidak lebih besar dari ukuran aslinya */
+  border-radius: 8px; /* Membuat sudut gambar sedikit membulat */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+}
+
+/* Efek Hover */
+.flex-item:hover {
+  transform: scale(1.05);
+}
+
+/* 🔹 RESPONSIVE DESIGN */
+
+/* Tablet (≤ 768px) */
+@media screen and (max-width: 768px) {
+  .teks-judul {
+    font-size: 24px;
+  }
+
+  .flex-container {
+    gap: 15px;
+  }
+
+  .flex-item {
+    flex: 1 1 45%; /* 2 Kolom saat di tablet */
+    max-width: 45%;
+  }
+}
+
+/* Smartphone (≤ 480px) */
+@media screen and (max-width: 480px) {
+  .teks-judul {
+    font-size: 20px;
+  }
+
+  .flex-container {
+    flex-direction: column; /* Jadi 1 kolom di layar kecil */
+    align-items: center;
+  }
+
+  .flex-item {
+    flex: 1 1 100%;
+    max-width: 90%;
+  }
+}
+.responsive {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Agar semua item ada di tengah */
+  gap: 50px; /* Jarak antar item */
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.gallery {
+  border: 1px solid black;
+  background: #f9f9f9;
+  padding: 0;
+  border-radius: 10px;
+  width: 240px;
+  height: auto;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.gallery img {
+  width: 240px;
+  height: 300px;
+  object-fit: cover;
+
+}
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.desc {
+  padding: 15px;
+  font-weight: bold;
+  color: #333;
+  font-size: 1rem;
+}
+/* Responsif untuk Tablet */
+@media (max-width: 768px) {
+  .responsive {
+    gap: 30px;
+  }
+
+  .gallery {
+    width: 200px;
+  }
+
+  .gallery img {
+    width: 200px;
+    height: 250px;
+  }
+
+  .desc {
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsif untuk HP */
+@media (max-width: 480px) {
+  .responsive {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .gallery {
+    width: 90%;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: auto;
+  }
+
+  .desc {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+}
+
+.box-content-layanan {
+  margin: 0;
+  background-image: url("images/bg.png");
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding-top: 50px;
+}
+
+/* Flexbox Container */
+.flex-container-layanan {
+  display: flex;
+  flex-wrap: wrap; /* Agar responsif */
+  justify-content: center;
+  gap: 20px; /* Jarak antar item */
+  font-size: 30px;
+  text-align: center;
+  margin: 25px;
+  background-color: transparent;
+}
+
+/* Flex Item */
+.flex-item-layanan {
+  background-color: transparent;
+  padding: 10px;
+  flex: 1 1 300px; /* Basis 300px, bisa lebih kecil jika layar sempit */
+  max-width: 300px; /* Maksimum lebar setiap item */
+  transition: transform 0.3s ease;
+}
+
+/* Gambar Responsif */
+.flex-item-layanan img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 50px;
+  max-width: 326px; /* Agar tidak lebih besar dari ukuran aslinya */
+  border-radius: 8px; /* Membuat sudut gambar sedikit membulat */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  border: 3px solid #9961CF;
+}
+
+/* Efek Hover */
+.flex-item-layanan:hover {
+  transform: scale(1.05);
+}
+/* Responsif untuk Tablet */
+@media (max-width: 768px) {
+  .flex-container-layanan {
+    gap: 15px;
+    margin: 20px;
+  }
+
+  .flex-item-layanan {
+    flex: 1 1 250px;
+    max-width: 250px;
+  }
+
+  .flex-item-layanan img {
+    max-width: 250px;
+  }
+}
+
+/* Responsif untuk HP */
+@media (max-width: 480px) {
+  .flex-container-layanan {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .flex-item-layanan {
+    flex: 1 1 90%;
+    max-width: 90%;
+  }
+
+  .flex-item-layanan img {
+    max-width: 100%;
+  }
+}

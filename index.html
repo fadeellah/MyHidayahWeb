@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>My Hidayah Tour and Travel</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body">
+
+	<header id="header" class="alt">
+		<span class="logo"><img src="images/logo-myhidayah.png" alt="" /></span>
+	</header>
+	<div id="navbar">
+		<a href="#home">Home</a>
+		<a href="#news">Program</a>
+		<a href="#contact">Produk</a>
+		<a href="#home">Agen</a>
+		<a href="#news">Testimoni</a>
+		<a href="#contact">Dokumentasi</a>
+		
+	  </div>
+	  <div class="slideshow-container">
+
+		<div class="mySlides fade">
+		  <img src="images/bg.png" style="width:100%">
+		  <div class="hero-text">
+			<h3>Judul 1</h3>
+			<p>Ada cerita tentang aku dan dia, dan kita bersama sejak dulu kala. ada cerita tentang masa yang indah. saat kita bersama, saat kita tertawa</p>
+			<button>Hire me</button>
+		  </div>
+		</div>
+		
+		<div class="mySlides fade">
+		  <img src="images/bg.png" style="width:100%">
+		  <div class="hero-text">
+			<h3 >Judul 2</h3>
+			<p>And I'm a Photographer</p>
+			<button>Hire me</button>
+		  </div>
+		</div>
+		
+		<div class="mySlides fade">
+		  <img src="images/bg.png" style="width:100%">
+		  <div class="hero-text">
+			<h3>Judul 3</h3>
+			<p>And I'm a Photographer</p>
+			<button>Hire me</button>
+		  </div>
+		</div>
+		
+		<a class="prev" onclick="plusSlides(-1)">❮</a>
+		<a class="next" onclick="plusSlides(1)">❯</a>
+		
+	</div>
+		<br>
+		
+		<div style="text-align:center">
+		  <span class="dot" onclick="currentSlide(1)"></span> 
+		  <span class="dot" onclick="currentSlide(2)"></span> 
+		  <span class="dot" onclick="currentSlide(3)"></span> 
+		</div>
+		
+		<div class="box-content"><h1 class="teks-judul">Program</h1>
+			<div class="flex-container">
+			<div class="flex-item"><img src="images/program.png"></div>
+			<div class="flex-item"><img src="images/program.png"></div>
+			<div class="flex-item"><img src="images/program.png"></div>
+			</div>
+		</div>
+
+		<div class="box-content"><h1 class="teks-judul">Kenapa Harus My Hidayah?</h1>
+			<div class="responsive">
+				<div class="gallery">
+				  <a target="_blank" href="images/alasan-1.png">
+					<img src="images/alasan-1.png" alt="Cinque Terre" >
+				  </a>
+				  <div class="desc">Add a description of the image here</div>
+				</div>
+
+				<div class="gallery">
+					<a target="_blank" href="images/alasan-1.png">
+					  <img src="images/alasan-2.png" alt="Mountains" >
+					</a>
+					<div class="desc">Add a description of the image here</div>
+				  </div>
+
+				  <div class="gallery">
+					<a target="_blank" href="images/alasan-1.png">
+					  <img src="images/alasan-3.png" alt="Mountains">
+					</a>
+					<div class="desc">Add a description of the image here</div>
+				  </div>
+
+				  <div class="gallery">
+					<a target="_blank" href="images/alasan-1.png">
+					  <img src="images/alasan-1.png" alt="Mountains" >
+					</a>
+					<div class="desc">Add a description of the image here</div>
+				  </div>
+			</div>
+		</div>
+
+		<div class="box-content-layanan"><h1 style="color: white;" class="teks-judul">Layanan dan Produk Kami</h1>
+			<div class="flex-container-layanan">
+				<div class="flex-item-layanan"><img src="images/Makkah.jfif"></div>
+				<div class="flex-item-layanan"><img src="images/Makkah.jfif"></div>
+				<div class="flex-item-layanan"><img src="images/Makkah.jfif"></div>
+				</div>
+		</div>
+
+		<script>
+			let slideIndex = 1;
+			showSlides(slideIndex);
+		
+			// Auto slide every 3 seconds
+			let slideTimer = setInterval(function () {
+				plusSlides(1);
+			}, 5000);
+		
+			function plusSlides(n) {
+				clearInterval(slideTimer); // Hentikan sementara auto slide saat tombol ditekan
+				showSlides(slideIndex += n);
+				slideTimer = setInterval(function () {
+					plusSlides(1);
+				}, 5000);
+			}
+		
+			function currentSlide(n) {
+				clearInterval(slideTimer);
+				showSlides(slideIndex = n);
+				slideTimer = setInterval(function () {
+					plusSlides(1);
+				}, 5000);
+			}
+		
+			function showSlides(n) {
+				let i;
+				let slides = document.getElementsByClassName("mySlides");
+				let dots = document.getElementsByClassName("dot");
+		
+				if (n > slides.length) { slideIndex = 1 }
+				if (n < 1) { slideIndex = slides.length }
+		
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+		
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				}
+		
+				slides[slideIndex - 1].style.display = "block";
+				dots[slideIndex - 1].className += " active";
+			}
+		</script>
+		
+				
+	</body>
+</html>
