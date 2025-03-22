@@ -13,12 +13,12 @@
 		<span class="logo"><img src="images/logo-myhidayah.png" alt="" /></span>
 	</header>
 	<div id="navbar">
-		<a href="#home">Home</a>
-		<a href="#news">Program</a>
-		<a href="#contact">Produk</a>
-		<a href="#home">Agen</a>
-		<a href="#news">Testimoni</a>
-		<a href="#contact">Dokumentasi</a>
+		<a href="#">Home</a>
+		<a onclick="location.href='#program';">Program</a>
+		<a onclick="location.href='#produk';">Produk</a>
+		<a onclick="location.href='#agen';">Agen</a>
+		<a href="#testimoni">Testimoni</a>
+		<a href="#dokumentasi">Dokumentasi</a>
 		
 	  </div>
 	  <div class="slideshow-container">
@@ -61,8 +61,9 @@
 		  <span class="dot" onclick="currentSlide(2)"></span> 
 		  <span class="dot" onclick="currentSlide(3)"></span> 
 		</div>
+		<br>
 		
-		<div class="box-content"><h1 class="teks-judul">Program</h1>
+		<div id="program" class="box-content"><h1 class="teks-judul">Program</h1>
 			<div class="flex-container">
 			<div class="flex-item"><img src="images/program.png"></div>
 			<div class="flex-item"><img src="images/program.png"></div>
@@ -70,7 +71,7 @@
 			</div>
 		</div>
 
-		<div class="box-content"><h1 class="teks-judul">Kenapa Harus My Hidayah?</h1>
+		<div id="kenapa" class="box-content-tengah"><h1 class="teks-judul">Kenapa Harus My Hidayah?</h1>
 			<div class="responsive">
 				<div class="gallery">
 				  <a target="_blank" href="images/alasan-1.png">
@@ -102,7 +103,7 @@
 			</div>
 		</div>
 
-		<div class="box-content-layanan"><h1 style="color: white;" class="teks-judul">Layanan dan Produk Kami</h1>
+		<div id="produk" class="box-content-layanan"><h1 style="color: white;" class="teks-judul">Layanan dan Produk Kami</h1>
 			<div class="flex-container-layanan">
 				<div class="flex-item-layanan"><img src="images/Makkah.jfif"></div>
 				<div class="flex-item-layanan"><img src="images/Makkah.jfif"></div>
@@ -110,6 +111,94 @@
 				</div>
 		</div>
 
+		<div id="agen" class="box-content-tengah"><h1 class="teks-judul">Keuntungan Menjadi Agen Kami</h1>
+			<div class="service-list">
+				<div class="service-item">
+					<a href="#">
+						<img src="images/agen-1.png" alt="Electrical">
+					</a>
+					<p style="font-size:24px; font-weight:bold ;">Agen</p>
+					<p style="font-size:20px; ">Dapatkan Bimbingan dari para ahli yang siap membantu strategi pemasaran terbaik untuk landa.</p>
+				</div>
+				<div class="service-item">
+					<a href="#">
+						<img src="images/agen-2.png" alt="Mechanical">
+					</a>
+					<p style="font-size:24px; font-weight:bold ;">Agen</p>
+					<p style="font-size:20px; ">Dapatkan Bimbingan dari para ahli yang siap membantu strategi pemasaran terbaik untuk landa.</p>
+				</div>
+				<div class="service-item">
+					<a href="#">
+						<img src="images/agen-3.png" alt="Monitoring">
+					</a>
+					<p style="font-size:24px; font-weight:bold ;">Agen</p>
+					<p style="font-size:20px; ">Dapatkan Bimbingan dari para ahli yang siap membantu strategi pemasaran terbaik untuk landa.</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="testimoni" class="box-content-layanan"><h1 style="color: white;" class="teks-judul">Testimoni Jamaah</h1>
+			<div class="flex-container-testimoni">
+				<div class="flex-item-testimoni"><img src="images/testimoni.png"></div>
+				<div class="flex-item-testimoni"><img src="images/testimoni.png"></div>
+				
+				</div>
+		</div>
+
+		<div id="dokumentasi" class="box-content-bawah">
+			<h1 class="teks-judul">Dokumentasi</h1>
+			<div class="scroll-container">
+				<img src="images/dokumentasi/1.png" alt="Cinque Terre">
+				<img src="images/dokumentasi/2.png" alt="Forest">
+				<img src="images/dokumentasi/3.png" alt="Northern Lights">
+				<img src="images/dokumentasi/4.png" alt="Mountains">
+			</div>
+			<p style="font-weight: bold;">Geser ke kanan untuk melihat dokumentasi kami</p>
+		</div>
+
+		<div class="box-content-footer">
+			<div class="row">
+			  <!-- Kolom Logo dan PPIU -->
+			  <div class="column">
+				<img src="images/logo-myhidayah.png">
+				<p>No PPIU: 12610005301580002</p>
+			  </div>
+		  
+			  <!-- Kolom Informasi -->
+			  <div class="column-2">
+				<h2 class="title-info">Informasi Kami</h2>
+				<a href="https://wa.me/6287788139020" target="_blank">
+					<img src="images/wa-logo.png" alt="WhatsApp">
+				  </a>
+				  <a href="https://instagram.com/myhidayahofficial" target="_blank">
+					<img src="images/ig-logo.png" alt="Instagram">
+				  </a>
+				  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=myhidayah.tourandtravel@gmail.com&subject=Permintaan%20Informasi&body=Halo,%20saya%20ingin%20mengetahui%20lebih%20lanjut." target="_blank">
+					<img src="images/gmail-logo.png" alt="Instagram">
+				  </a>
+				<div class="columns-container">
+				  <div class="column-a" >
+					<p>Alamat:<br><br>
+
+						Email:<br>
+						Instagram: <br>
+						No telp: </p>
+				  </div>
+				  <div class="column-b" >
+					<p>Jl. Raya Perjuangan, RT 001 RW 034, Teluk Pucung, Bekasi Utara, Jawa Barat, Indonesia <br>
+						myhidayah.tourandtravel@gmail.com<br>
+						myhidayahofficial<br>
+						087788139020 / 082135650841</p>
+						
+				  </div>
+				  
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  
+
+		</script>
 		<script>
 			let slideIndex = 1;
 			showSlides(slideIndex);
@@ -158,4 +247,7 @@
 		
 				
 	</body>
+	<footer>
+		<p style="color: white; text-align: center; font-size: 14px;">Copyright © 2025 | MY Hidayah Tour And Travel</p>
+	</footer>
 </html>
