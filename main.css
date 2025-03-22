@@ -5,6 +5,7 @@ body {
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 0;
+    background-image: linear-gradient(to bottom right, #9961CF, #3A1359);
     /*padding-top: 80px;*/
     text-align: center;
     /*background-image: url("assets/bg9.jpg");
@@ -22,11 +23,11 @@ html {
 }
 
 .logo img {
-    width: 15%; /* Perkecil ukuran logo */
-    height: auto; /* Pastikan aspek rasio tetap */
+    width: 250px; /* Perkecil ukuran logo */
+    height: 250px; /* Pastikan aspek rasio tetap */
     opacity: 0;
-    transform: scale(0.9);
-    animation: fadeIn 1s ease-in-out forwards;
+    transform: scale(1.1);
+    animation: fadeIn 2s ease-in-out forwards;
 }
 @keyframes fadeIn {
     to {
@@ -42,7 +43,8 @@ html {
     }
     
     .logo img {
-        width: 60px; /* Lebih kecil di layar kecil */
+      width: 200px; /* Perkecil ukuran logo */
+      height: 200px; /* Lebih kecil di layar kecil */
     }
 }
 
@@ -52,7 +54,8 @@ html {
     }
 
     .logo img {
-        width: 50px; /* Perkecil lagi di HP */
+      width: 150px; /* Perkecil ukuran logo */
+      height: 150px; /* Perkecil lagi di HP */
     }
 }
 /* Style the navbar */
@@ -76,11 +79,15 @@ html {
     padding: 14px 30px; /* Jarak antar item */
     text-decoration: none;
     display: inline-block; /* Pastikan tetap sejajar */
+    cursor: pointer;
   }
   /* Hover effect */
 #navbar a:hover {
     background-color: #ddd;
     color: black;
+}
+#agen, #program, #produk, #testimoni, #dokumentasi {
+  scroll-margin-top: 15vh; /* Menyesuaikan jarak agar bagian "Agen" muncul di tengah */
 }
   /* Page content */
   .content {
@@ -96,7 +103,7 @@ html {
 @media screen and (max-width: 480px) {
     #navbar a {
         font-size: 12px; /* Lebih kecil untuk layar kecil */
-        padding: 8px 12px;
+        padding: 8px 8px;
     }
 }
   
@@ -272,10 +279,22 @@ html {
 }
 /* Container utama */
 .box-content {
-  margin: 25px;
+  margin: 0 40px 0 40px;
   border-bottom: 1px solid #333;
   text-align: center;
+  background-color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding-top: 25px;
 }
+.box-content-tengah {
+  margin: 0 40px 0 40px;
+  border-bottom: 1px solid #333;
+  text-align: center;
+  background-color: white;
+  padding-top: 25px;
+}
+
 
 /* Judul dengan garis bawah */
 .teks-judul {
@@ -436,13 +455,15 @@ html {
 }
 
 .box-content-layanan {
-  margin: 0;
-  background-image: url("images/bg.png");
-  background-size: cover;
-  width: 100%;
-  height: auto;
+  margin: 0 40px 0 40px;
+  border-bottom: 1px solid #333;
   text-align: center;
-  padding-top: 50px;
+  background-color: white;
+  background-image: url("images/bg.png"); /* Ganti dengan path gambar */
+  background-size: cover;  /* Menyesuaikan gambar agar menutupi elemen */
+  background-position: center;  /* Memposisikan gambar di tengah */
+  background-repeat: no-repeat;  /* Mencegah pengulangan gambar */
+  padding-top: 25px;
 }
 
 /* Flexbox Container */
@@ -513,5 +534,246 @@ html {
 
   .flex-item-layanan img {
     max-width: 100%;
+  }
+}
+
+.service-list {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 20px 0;
+}
+
+.service-item {
+  text-align: center;
+}
+
+.service-item a img:hover {
+  transform: scale(1.05); /* Zoom sedikit */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Tambah bayangan */
+}
+
+.service-item a img {
+  width: 300px;
+  height: 240px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.service-item p {
+  margin-top: 10px;
+  color: black;
+}
+
+.service {
+  background: green;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+
+  .service h2 {
+      font-size: 32px;
+  }
+  .service-list {
+      display: grid;
+      grid-template-columns: 1fr; /* Bagi menjadi 2 kolom */
+      gap: 15px;
+  }
+  .service-item a img {
+      width: 187.5px;
+      height: 150px;
+  }
+  .service-button {
+      padding: 8px 16px;
+      font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .service h2 {
+      font-size: 28px;
+  }
+  .service-list {
+      grid-template-columns: 1fr; /* Tetap 2 kolom di layar kecil */
+  }
+  .service-item a img {
+      width: 187.5px;
+      height: 150px;
+  }
+  .service-button {
+      padding: 6px 14px;
+      font-size: 14px;
+  }
+}
+
+.flex-container-testimoni {
+  display: flex;
+  flex-wrap: wrap; /* Agar responsif */
+  justify-content: center;
+  gap: 20px; /* Jarak antar item */
+  font-size: 30px;
+  text-align: center;
+  margin: 25px;
+  background-color: transparent;
+}
+/* Flex Item */
+.flex-item-testimoni {
+  background-color: transparent;
+  padding: 10px;
+  flex: 1 1 420px; /* Basis 300px, bisa lebih kecil jika layar sempit */
+  max-width: 420px; /* Maksimum lebar setiap item */
+  transition: transform 0.3s ease;
+}
+
+/* Gambar Responsif */
+.flex-item-testimoni img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 50px;
+  max-width: 420px; /* Agar tidak lebih besar dari ukuran aslinya */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  
+}
+
+.box-content-bawah {
+  margin: 0 40px 0 40px;
+  border-bottom: 1px solid #333;
+  text-align: center;
+  background-color: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.scroll-container {
+  background-color: white;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+.scroll-container img {
+  padding: 10px;
+}
+
+
+/*Footer*/
+.box-content-footer{
+  margin: 0 40px 0 40px;
+  border-bottom: 1px solid #333;
+  
+  background-color: transparent;
+  padding-top: 25px;
+}
+
+.row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+/* Kolom Logo */
+.column {
+  width: 45%;
+  padding: 10px;
+  background-color: transparent;
+  color: white;
+  text-align: left;
+}
+.column img{
+  width: 125px;
+  height: 125px;
+}
+
+/* Kolom Informasi */
+.column-2 {
+  width: 45%;
+  padding: 10px;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+}
+
+/* Judul "Informasi Kami" */
+.title-info {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Container untuk dua kolom dalam column-2 */
+.columns-container {
+  display: flex;
+  justify-content: space-between; /* Mengatur agar kedua kolom sejajar */
+  gap: 10px;
+}
+
+/* Kolom di dalam column-2 */
+.column-2 .column-a {
+  width: 30%;
+  text-align: left;
+  padding: 10px;
+}
+.column-2 .column-b {
+  width: 70%;
+  text-align: left;
+  padding: 10px;
+}
+
+.column-2 img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+  margin: 10px;
+}
+.column-2 a{
+  text-decoration: none;
+}
+
+/* Efek Hover */
+.column-2 img:hover {
+  transform: scale(1.1);
+}
+/* ===== RESPONSIF UNTUK TABLET ===== */
+@media screen and (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .column,
+  .column-2 {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .columns-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .column-a{
+    display:none;
+  }
+  .column-b p{
+    display: none;
+  }
+}
+
+/* ===== RESPONSIF UNTUK MOBILE ===== */
+@media screen and (max-width: 480px) {
+  .column img {
+    width: 100px;
+  }
+
+  .column-b img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .column-b p {
+    font-size: 14px;
   }
 }
