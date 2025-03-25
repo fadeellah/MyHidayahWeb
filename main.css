@@ -214,16 +214,25 @@ html {
 }
 
   
-  /* Fading animation */
+    /* Fading animation */
   .fade {
-    animation-name: fade;
+    opacity: 1; /* Pastikan tidak disembunyikan sebelum animasi */
+    animation-name: slideIn;
     animation-duration: 1.5s;
+    animation-fill-mode: both; /* Mencegah kedipan */
+    will-change: transform, opacity;
   }
   
-  @keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-  }
+  @keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translate3d(-50px, 0, 0); /* Gunakan translate3d */
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
   
   /* On smaller screens, decrease text size */
   @media only screen and (max-width: 300px) {
