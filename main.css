@@ -83,8 +83,9 @@ html {
   }
   /* Hover effect */
 #navbar a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: #9961CF;
+    color: white;
+    border-radius: 10px;
 }
 #agen, #program, #produk, #testimoni, #dokumentasi {
   scroll-margin-top: 15vh; /* Menyesuaikan jarak agar bagian "Agen" muncul di tengah */
@@ -103,7 +104,7 @@ html {
 @media screen and (max-width: 480px) {
     #navbar a {
         font-size: 12px; /* Lebih kecil untuk layar kecil */
-        padding: 8px 8px;
+        padding: 8px 5px;
     }
 }
   
