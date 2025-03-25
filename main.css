@@ -124,7 +124,7 @@ html {
 /* Gambar dalam slideshow */
 .mySlides img {
   width: 100%;
-  height: auto;
+  height: 500px;
   object-fit: cover;
 }
 
@@ -138,7 +138,7 @@ html {
   color: white;
   width: 80%;
   max-width: 700px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(19, 8, 8, 0.5);
   padding: 20px;
   border-radius: 10px;
 }
@@ -231,6 +231,9 @@ html {
   }
   /* RESPONSIVE DESIGN */
 @media screen and (max-width: 768px) {
+  .img1{
+    display: none;
+  }
   .hero-text {
     width: 90%;
     padding: 15px;
@@ -304,6 +307,14 @@ html {
   padding-bottom: 10px;
   display: inline-block;
   border-bottom: 4px solid #9961CF; /* Warna garis bawah */
+
+  opacity: 0; /* Awalnya disembunyikan */
+  transform: translateY(-30px); /* Geser sedikit ke bawah */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.teks-judul.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Flexbox Container */
@@ -324,9 +335,16 @@ html {
   padding: 10px;
   flex: 1 1 300px; /* Basis 300px, bisa lebih kecil jika layar sempit */
   max-width: 300px; /* Maksimum lebar setiap item */
-  transition: transform 0.3s ease;
+  
+  opacity: 0; /* Awalnya disembunyikan */
+  transform: translateY(30px); /* Geser sedikit ke bawah */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-
+/* Saat Elemen Muncul di Layar */
+.flex-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* Gambar Responsif */
 .flex-item img {
   width: 100%;
@@ -393,6 +411,15 @@ html {
   height: auto;
   transition: 0.3s;
   text-align: center;
+
+  opacity: 0;
+  transform: translateY(30px); /* Mulai dari atas */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.gallery.show{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .gallery img {
@@ -459,7 +486,7 @@ html {
   border-bottom: 1px solid #333;
   text-align: center;
   background-color: white;
-  background-image: url("images/bg.png"); /* Ganti dengan path gambar */
+   /* Ganti dengan path gambar */
   background-size: cover;  /* Menyesuaikan gambar agar menutupi elemen */
   background-position: center;  /* Memposisikan gambar di tengah */
   background-repeat: no-repeat;  /* Mencegah pengulangan gambar */
@@ -476,17 +503,36 @@ html {
   text-align: center;
   margin: 25px;
   background-color: transparent;
+
+  opacity: 0;
+  transform: translateY(30px); /* Mulai dari atas */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+.flex-container-layanan.show{
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* Flex Item */
 .flex-item-layanan {
-  background-color: transparent;
+  background-color: white;
   padding: 10px;
-  flex: 1 1 300px; /* Basis 300px, bisa lebih kecil jika layar sempit */
-  max-width: 300px; /* Maksimum lebar setiap item */
+  flex: 1 1 200px; /* Basis 300px, bisa lebih kecil jika layar sempit */
+  max-width: 200px; /* Maksimum lebar setiap item */
+  max-height: 200px;
   transition: transform 0.3s ease;
+  border-radius: 10px;
+  border: 1px solid #9961CF;
 }
-
+.flex-item-layanan h3{
+  font-size: 16px;
+  border-bottom: 1px solid #9961CF;
+}
+.flex-item-layanan p{
+  font-size: 14px;
+  margin-bottom: 10px;
+}
 /* Gambar Responsif */
 .flex-item-layanan img {
   width: 100%;
@@ -501,6 +547,22 @@ html {
 /* Efek Hover */
 .flex-item-layanan:hover {
   transform: scale(1.05);
+}
+
+.scroll-container-produk{
+  background-color: transparent;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 30px;
+  
+}
+.scroll-container-produk video {
+  width: 100%;
+  max-width: 250px; /* Batas maksimum agar tetap proporsional */
+  height: auto;
+  border: 2px solid #9961CF; /* Border terlihat */
+  border-radius: 10px;
+  margin: 10px;
 }
 /* Responsif untuk Tablet */
 @media (max-width: 768px) {
@@ -537,74 +599,79 @@ html {
   }
 }
 
+/* Grid layout untuk layanan */
 .service-list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 30px;
   justify-content: center;
-  gap: 50px;
-  margin: 20px 0;
+  margin-top: 20px;
+
+  opacity: 0;
+  transform: translateY(-30px); /* Mulai dari atas */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
+.service-list.show{
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Style untuk setiap item layanan */
 .service-item {
-  text-align: center;
-}
-
-.service-item a img:hover {
-  transform: scale(1.05); /* Zoom sedikit */
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Tambah bayangan */
-}
-
-.service-item a img {
-  width: 300px;
-  height: 240px;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.service-item p {
-  margin-top: 10px;
-  color: black;
-}
-
-.service {
-  background: green;
-  color: white;
+  background: white;
   padding: 20px;
   border-radius: 10px;
-}
-@media (max-width: 768px) {
-
-  .service h2 {
-      font-size: 32px;
-  }
-  .service-list {
-      display: grid;
-      grid-template-columns: 1fr; /* Bagi menjadi 2 kolom */
-      gap: 15px;
-  }
-  .service-item a img {
-      width: 187.5px;
-      height: 150px;
-  }
-  .service-button {
-      padding: 8px 16px;
-      font-size: 16px;
-  }
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-@media (max-width: 480px) {
-  .service h2 {
-      font-size: 28px;
-  }
+/* Efek hover */
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Gaya gambar */
+.service-item a img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Efek hover pada gambar */
+.service-item a img:hover {
+  transform: scale(1.05);
+}
+
+/* Judul layanan */
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #333;
+}
+
+/* Deskripsi layanan */
+.description {
+  font-size: 16px;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* RESPONSIF untuk Tablet & Mobile */
+@media screen and (max-width: 768px) {
   .service-list {
-      grid-template-columns: 1fr; /* Tetap 2 kolom di layar kecil */
+      grid-template-columns: 1fr; /* 1 kolom di layar kecil */
   }
-  .service-item a img {
-      width: 187.5px;
-      height: 150px;
-  }
-  .service-button {
-      padding: 6px 14px;
-      font-size: 14px;
+
+  .service-item {
+      max-width: 90%;
+      margin: auto;
   }
 }
 
@@ -617,24 +684,42 @@ html {
   text-align: center;
   margin: 25px;
   background-color: transparent;
+
+  opacity: 0;
+  transform: translateY(-30px); /* Mulai dari atas */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-/* Flex Item */
-.flex-item-testimoni {
-  background-color: transparent;
-  padding: 10px;
-  flex: 1 1 420px; /* Basis 300px, bisa lebih kecil jika layar sempit */
-  max-width: 420px; /* Maksimum lebar setiap item */
-  transition: transform 0.3s ease;
+.flex-container-testimoni.show{
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Gambar Responsif */
-.flex-item-testimoni img {
+/* Style Video */
+.flex-container-testimoni video {
   width: 100%;
+  max-width: 250px; /* Batas maksimum agar tetap proporsional */
   height: auto;
-  margin-bottom: 50px;
-  max-width: 420px; /* Agar tidak lebih besar dari ukuran aslinya */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan */
-  
+  border: 2px solid #9961CF; /* Border terlihat */
+  border-radius: 10px;
+  margin: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Efek Hover */
+.flex-container-testimoni video:hover {
+  transform: scale(1.05);
+}
+
+/* RESPONSIF untuk Tablet & Mobile */
+@media screen and (max-width: 768px) {
+  .flex-container-testimoni {
+    flex-direction: column; /* Video ditampilkan vertikal */
+    align-items: center;
+  }
+
+  .flex-container-testimoni video {
+    max-width: 90%; /* Lebar lebih besar di layar kecil */
+  }
 }
 
 .box-content-bawah {
@@ -652,8 +737,16 @@ html {
   overflow: auto;
   white-space: nowrap;
   padding: 10px;
+
+  opacity: 0;
+  transform: translateY(30px); /* Mulai dari atas */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
+.scroll-container.show{
+  opacity: 1;
+  transform: translateY(0);
+}
 .scroll-container img {
   padding: 10px;
 }
